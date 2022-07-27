@@ -1,17 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Home from '@/renderContent/views/Home';
+import { createRoot, Root } from 'react-dom/client';
+import RootComponent from './Root';
 
 type Props = {
   container?: Element | null;
 };
+let root: Root;
 const render = (props: Props) => {
   const { container } = props;
   if (container) {
-    ReactDOM.render(
-      <Home></Home>,
-      container,
-    );
+    root = createRoot(container); 
+    root.render(<RootComponent />);
   }
 };
 
@@ -21,5 +19,6 @@ export async function mount(props: Props) {
 
 export async function unmount(props: Props) {
   const { container } = props;
-  container && ReactDOM.unmountComponentAtNode(container);
+  const _root = root || (container && createRoot(container));
+  _root?.unmount();
 }

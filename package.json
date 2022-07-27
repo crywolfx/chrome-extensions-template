@@ -22,7 +22,8 @@
   "scripts": {
     "start": "react-app-rewired start",
     "start:hot": "cross-env CHROME_HOT=true node ./script/start.js start",
-    "start:disk": "cross-env CHROME_HOT=false WRITE_TO_DISK=true node ./script/start.js start"
+    "start:disk": "cross-env CHROME_HOT=false WRITE_TO_DISK=true node ./script/start.js start",
+    "build": "npm run update && cross-env GENERATE_SOURCEMAP=false react-app-rewired build"
   },
   "eslintConfig": {
     "extends": [

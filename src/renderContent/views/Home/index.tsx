@@ -1,3 +1,8 @@
-export default function Home () {
-  return <div>home page</div>
+import Button from 'antd/es/button';
+export default function Home() {
+  return (
+    <div className="home">
+      <Button type="primary">测试123</Button>
+    </div>
+  )
 }
