@@ -9,7 +9,6 @@ export const getIsActive = () => retry(() => withTimeout(() => store.get('isActi
 
 class Content {
   container: HTMLDivElement | undefined;
-  style: HTMLHeadElement | undefined;
   id: string;
   constructor() {
     this.id = `chrome-extensions-template-${VERSION.split('.')?.join?.('-')}`;
@@ -33,10 +32,6 @@ class Content {
       this.container?.parentNode?.removeChild(container);
       this.container = undefined;
       contentLog('destory成功');
-    }
-    if (this.style) {
-      this.style?.parentNode?.removeChild(this.style);
-      this.style = undefined;
     }
   }
 

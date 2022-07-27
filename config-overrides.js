@@ -5,7 +5,6 @@ const {
   override,
   overrideDevServer,
   addPostcssPlugins,
-  addLessLoader,
 } = require('customize-cra');
 const webpack = require('webpack');
 const path = require('path');
